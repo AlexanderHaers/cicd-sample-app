@@ -1,4 +1,4 @@
-Jenkinsfile{
+pipeline{
     stage('Preparation') {
         catchError(buildResult: 'SUCCESS') {
             sh 'docker stop samplerunning '
