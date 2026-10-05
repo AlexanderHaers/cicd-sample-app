@@ -1,4 +1,6 @@
-pipeline{
+pipeline {
+    agent any
+    stages {
     stage('Preparation') {
         catchError(buildResult: 'SUCCESS') {
             sh 'docker stop samplerunning '
@@ -10,5 +12,6 @@ pipeline{
     }
     stage('Results') {
         build 'TestSampleApp'
+    }
     }
 }
