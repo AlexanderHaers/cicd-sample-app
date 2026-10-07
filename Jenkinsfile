@@ -3,7 +3,6 @@ node {
         catchError(buildResult: 'SUCCESS') {
             sh 'docker stop samplerunning'
             sh 'docker rm samplerunning'
-            sh 'docker compose build'
         }
     }
     stage('Build') {
@@ -11,6 +10,9 @@ node {
     }
     stage('Results') {
         build 'TestSampleApp'
+    }
+    stage('Results') {
+        build 'BuildDotnetApp'
     }
     post {
         always {
