@@ -16,4 +16,5 @@ node {
         always {
             sh 'docker compose down'
         }
+    }
 }
