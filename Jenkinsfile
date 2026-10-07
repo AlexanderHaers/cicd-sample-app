@@ -3,7 +3,7 @@ node {
         catchError(buildResult: 'SUCCESS') {
             sh 'docker stop samplerunning'
             sh 'docker rm samplerunning'
-            sh 'docker compose up -d --build'
+            sh 'docker compose build'
         }
     }
     stage('Build') {
