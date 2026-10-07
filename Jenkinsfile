@@ -14,9 +14,4 @@ node {
     stage('Results') {
         build 'BuildDotnetApp'
     }
-    post {
-        always {
-            sh 'docker compose down'
-        }
-    }
 }
